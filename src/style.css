@@ -1,14 +1,113 @@
 body {
   font-family: sans-serif;
-  background-color: #f2f2f2;
   padding: 20px;
+  background: #232322;
+  color: #313332;
 }
 
 .App {
   max-width: 500px;
   margin: 0 auto;
-  background: white;
+  background: #F4CA52;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+
+.todo {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #E1E8D6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #C8D6CF;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+
+input[type="text"]::placeholder {
+  color: #999;
+}
+
+input[type="text"]:focus::placeholder {
+  color: transparent;
+}
+
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+h2.list {
+  text-align: center;
+}
+
+.task-text {
+  position: relative;
+  display: inline-block;
+}
+
+.task-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 2px;
+  background: #333;
+  width: 100%;
+  transform: scaleX(0) translateY(-50%);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.task-text.done::after {
+  transform: scaleX(1) translateY(-50%);
 }
